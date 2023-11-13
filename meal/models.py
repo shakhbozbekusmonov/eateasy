@@ -23,5 +23,7 @@ class Product(BaseModel):
     price = models.DecimalField(decimal_places=2, max_digits=10)
     image = models.ImageField(upload_to="product_images")
 
+    is_popular = models.BooleanField(default=False)
+
     product_type = models.ForeignKey(ProductType, on_delete=models.CASCADE)
     restaurant = models.ForeignKey("restaurant.Restaurant", on_delete=models.CASCADE)

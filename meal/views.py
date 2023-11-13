@@ -8,5 +8,5 @@ from meal.models import Product
 
 
 class ProductListView(generics.ListAPIView):
-    queryset = Product.objects.all()
+    queryset = Product.objects.all().filter(is_popular=True)
     serializer_class = ProductSerializer
